@@ -13,11 +13,13 @@
 @end
 
 @implementation RCRunkeeperSwitchRoundedLayer
+
 - (void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];
     self.cornerRadius = self.bounds.size.height / 2.0;
 }
+
 @end
 
 @interface RCRunkeeperSwitch ()<UIGestureRecognizerDelegate>
@@ -40,15 +42,10 @@
 @property (nonatomic, assign)NSInteger selectedIndex;
 @end
 
+static NSString *SelectedBackgroundViewFrameKeyPath = @"selectedBackgroundView.frame";
+
 @implementation RCRunkeeperSwitch
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 - (instancetype)init
 {
     self = [super init];
@@ -132,18 +129,18 @@
     self.panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
     self.panGesture.delegate = self;
     [self addGestureRecognizer:self.panGesture];
-    [self addObserver:self forKeyPath:@"selectedBackgroundView.frame" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:self forKeyPath:SelectedBackgroundViewFrameKeyPath options:NSKeyValueObservingOptionNew context:nil];
     
 }
 
 - (void)dealloc
 {
-    [self removeObserver:self forKeyPath:@"selectedBackgroundView.frame"];
+    [self removeObserver:self forKeyPath:SelectedBackgroundViewFrameKeyPath];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if ([keyPath isEqualToString:@"selectedBackgroundView.frame"]) {
+    if ([keyPath isEqualToString:SelectedBackgroundViewFrameKeyPath]) {
         self.titleMaskView.frame = self.selectedBackgroundView.frame;
     }
 }
@@ -165,7 +162,6 @@
         
         frame.origin.x  = MAX(MIN(frame.origin.x, self.bounds.size.width - self.selectedBackgroundInset - frame.size.width), self.selectedBackgroundInset);
         self.selectedBackgroundView.frame = frame;
-        NSLog(@"%@",NSStringFromCGRect(frame));
     } else if (gesture.state == UIGestureRecognizerStateEnded || gesture.state == UIGestureRecognizerStateFailed || gesture.state == UIGestureRecognizerStateCancelled) {
         CGFloat velocityX = [gesture velocityInView:self].x;
         if (velocityX > 500.0) {
