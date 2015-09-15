@@ -10,7 +10,7 @@ A Objective C impltation for Runkeeper design switch control, it is a clone from
 
 ## Demo
 
-Open and run the RCRunkeeperSwitchDemo project in Xcode to see RCRunkeeperSwitch in action.
+Open and run the `RCRunkeeperSwitchDemo.xcodeproj` in Xcode to see RCRunkeeperSwitch in action.
 
 ## Installation
 
@@ -21,15 +21,15 @@ All you need to do is drop `RCRunkeeperSwitch.h` and `RCRunkeeperSwitch.m` file 
 ## Example usage
 
 ``` objc
-    RCRunkeeperSwitch *runkeeperSwitch = [[RCRunkeeperSwitch alloc]initWithLeftTitle:@"Feed" rightTitle:@"Leaderboard"];
-    runkeeperSwitch.backgroundColor = [UIColor colorWithRed:239.0/255.0 green:95.0/255.0 blue:49.0/255.0 alpha:1.0];
-    runkeeperSwitch.selectedBackgroundColor = [UIColor whiteColor];
-    runkeeperSwitch.titleColor = [UIColor whiteColor];
-    runkeeperSwitch.selectedTitleColor = [UIColor colorWithRed:239.0/255.0 green:95.0/255.0 blue:49.0/255.0 alpha:1.0];
-    runkeeperSwitch.titleFont = [UIFont fontWithName:@"HelveticaNeue-Medium" size:13];
-    runkeeperSwitch.frame = CGRectMake(50, 20, CGRectGetWidth(self.view.bounds) - 100, 30);
-    runkeeperSwitch.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    [self.view addSubview:runkeeperSwitch2];
+RCRunkeeperSwitch *runkeeperSwitch = [[RCRunkeeperSwitch alloc]initWithLeftTitle:@"Feed" rightTitle:@"Leaderboard"];
+runkeeperSwitch.backgroundColor = [UIColor colorWithRed:239.0/255.0 green:95.0/255.0 blue:49.0/255.0 alpha:1.0];
+runkeeperSwitch.selectedBackgroundColor = [UIColor whiteColor];
+runkeeperSwitch.titleColor = [UIColor whiteColor];
+runkeeperSwitch.selectedTitleColor = [UIColor colorWithRed:239.0/255.0 green:95.0/255.0 blue:49.0/255.0 alpha:1.0];
+runkeeperSwitch.titleFont = [UIFont fontWithName:@"HelveticaNeue-Medium" size:13];
+runkeeperSwitch.frame = CGRectMake(50, 20, CGRectGetWidth(self.view.bounds) - 100, 30);
+runkeeperSwitch.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+[self.view addSubview:runkeeperSwitch];
 ```
 
 ## Contribution
