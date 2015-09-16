@@ -13,7 +13,10 @@ A Objective C impltation for Runkeeper design switch control, it is a clone from
 Open and run the `RCRunkeeperSwitchDemo.xcodeproj` in Xcode to see RCRunkeeperSwitch in action.
 
 ## Installation
-
+### Cocoapod
+```
+pod 'RCRunkeeperSwitch'
+```
 ### Manual
 
 All you need to do is drop `RCRunkeeperSwitch.h` and `RCRunkeeperSwitch.m` file into your project
