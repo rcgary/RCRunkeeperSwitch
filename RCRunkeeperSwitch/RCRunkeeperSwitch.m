@@ -39,7 +39,6 @@
 @property (nonatomic, strong)UIPanGestureRecognizer *panGesture;
 
 @property (nonatomic, assign)CGRect initialSelectedBackgroundViewFrame;
-@property (nonatomic, assign)NSInteger selectedIndex;
 @end
 
 static NSString *SelectedBackgroundViewFrameKeyPath = @"selectedBackgroundView.frame";
