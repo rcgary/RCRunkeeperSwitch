@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RCRunkeeperSwitch"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A Objective C impltation for Runkeeper design switch control, it is a clone from DGRunkeeperSwitch"
   s.description  = <<-DESC
                   A Objective C impltation for Runkeeper design switch control, it is a clone from [DGRunkeeperSwitch](https://github.com/gontovnik/DGRunkeeperSwitch) 
