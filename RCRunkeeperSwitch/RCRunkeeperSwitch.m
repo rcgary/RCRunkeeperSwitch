@@ -85,7 +85,7 @@ static NSString *SelectedBackgroundViewFrameKeyPath = @"selectedBackgroundView.f
 
 - (void)finishInit
 {
-    self.selectedIndex = 0;
+    _selectedIndex = 0;
     self.selectedBackgroundInset = 2.0;
     self.animationDuration = 0.3;
     self.animationSpringDamping = 0.75;
@@ -182,7 +182,7 @@ static NSString *SelectedBackgroundViewFrameKeyPath = @"selectedBackgroundView.f
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated
 {
-    self.selectedIndex = selectedIndex;
+    _selectedIndex = selectedIndex;
     if (animated) {
         [UIView animateWithDuration:self.animationDuration delay:0 usingSpringWithDamping:self.animationSpringDamping initialSpringVelocity:self.animationInitialSpringVelocity options:UIViewAnimationOptionCurveEaseOut animations:^{
             [self layoutSubviews];
