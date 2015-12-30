@@ -20,6 +20,8 @@
 @property (nonatomic, assign) NSTimeInterval animationDuration;
 @property (nonatomic, assign) CGFloat animationSpringDamping;
 @property (nonatomic, assign) CGFloat animationInitialSpringVelocity;
+@property (nonatomic, assign, readonly) NSInteger selectedIndex;
 
 - (instancetype)initWithLeftTitle:(NSString*)leftTtitle rightTitle:(NSString*)rightTitle;
+- (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated;
 @end
